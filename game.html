@@ -12,9 +12,18 @@
   </nav>
   <h1>My game</h1>
   <script>
+    const radius = 100;
+    let x,y;
+
     function setup(){
-      createCanvas(500,400);
+      createCanvas(windowWidth,windowHeight);
+      x = random(windowWidth)
+      y = random(windowHeight)
        background(169,237,125)
+
+    }
+
+    function draw(){
 
     }
   </script>  
