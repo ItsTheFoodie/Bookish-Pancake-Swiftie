@@ -28,7 +28,7 @@
 
     function draw(){
       background(169,237,125)
-      fill(255,255,0);
+      fill(r,g,b);
       noStroke();
       ellipse(x,y,radius*2,radius*2)
       text("Score: " + score, 10, 20);
@@ -41,12 +41,16 @@
         score++;
         if (score == 10) {
           radius /= 2;
-    }
+        }
       }
 }
       function newCircle(){
         x = random(windowWidth);
         y = random(windowHeight);
+        r = random(255);
+        g = random(255);
+        b = random(255);
+    }
       }
     setInterval(newCircle, 1000);
   </script>  
