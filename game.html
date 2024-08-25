@@ -14,7 +14,7 @@
   <script>
     let r, g, b;
     let score = 0;
-    const radius = 100;
+    let radius = 100;
     let x,y;
 
     function setup(){
@@ -31,7 +31,6 @@
       fill(r,g,b);
       noStroke();
       ellipse(x,y,radius*2,radius*2)
-      fill("black");
       text("Score: " + score, 10, 20);
     }
 
@@ -41,7 +40,7 @@
         newCircle();
         score++;
         if (score == 10) {
-          radius /= 2;
+           radius /= 2;
         }
       }
 }
