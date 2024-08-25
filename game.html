@@ -12,6 +12,7 @@
   </nav>
   <h1>My game</h1>
   <script>
+    let r, g, b;
     let score = 0;
     const radius = 100;
     let x,y;
@@ -20,6 +21,9 @@
       createCanvas(windowWidth,windowHeight);
       x = random(windowWidth)
       y = random(windowHeight)
+      r = random(255);
+      g = random(255);
+      b = random(255);
     }
 
     function draw(){
@@ -32,12 +36,20 @@
 
     function mousePressed(){
       let  d = dist (mouseX, mouseY ,x, y);
-      if(d < radius) {
-        x = random(windowWidth);
-        y = random(windowHeight)
+      if (d < radius) {
+        newCircle();
         score++;
+        if (score == 10) {
+          radius /= 2;
+    }
+      }
+}
+      function newCircle(){
+        x = random(windowWidth);
+        y = random(windowHeight);
       }
     }
+    setInterval(newCircle, 1000);
   </script>  
 </body>
 </html>
